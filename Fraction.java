@@ -117,6 +117,12 @@ public class Fraction {
 		return div;
 	}
 
+	public Fraction add(Fraction other) {
+		int newNum = this.getNumerator()*other.getDenominator()+other.getNumerator()*this.getDenominator();
+		int newDenom = this.getDenominator()*other.getDenominator();
+		return new Fraction(newNum, newDenom);
+	}
+
 //	public Fraction add(Fraction other) {
 //		int num = this.getNumerator()
 //		return new Fraction(num, denom);

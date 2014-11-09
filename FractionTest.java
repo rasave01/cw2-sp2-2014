@@ -43,7 +43,7 @@ public class FractionTest {
 //	}
 	
 	@Test
-	public void testabsValue(){
+	public void testAbsValue(){
 		Fraction f = new Fraction(-3,-10);
 		Fraction expectedOutput = new Fraction(3,10);
 		Fraction actualOutput = f.absValue();
@@ -51,7 +51,7 @@ public class FractionTest {
 	}
 	
 	@Test
-	public void testnegate(){
+	public void testNegate(){
 		Fraction f = new Fraction(-3,-10);
 		Fraction expectedOutput = new Fraction(-3,10);
 		Fraction actualOutput = f.negate();
@@ -67,7 +67,7 @@ public class FractionTest {
 	}
 	
 	@Test
-	public void testinverse(){
+	public void testInverse(){
 		Fraction f = new Fraction(9,3);
 		Fraction expectedOutput = new Fraction(3,9);
 		Fraction actualOutput = f.inverse();
@@ -80,6 +80,15 @@ public class FractionTest {
 		Fraction g = new Fraction(7,-5);
 		Fraction expectedOutput = new Fraction(40,21);
 		Fraction actualOutput = f.divide(g);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testAdd(){
+		Fraction f = new Fraction(1,3);
+		Fraction g = new Fraction(2,6);
+		Fraction expectedOutput = new Fraction(2,3);
+		Fraction actualOutput = f.add(g);
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 }

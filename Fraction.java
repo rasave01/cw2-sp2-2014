@@ -84,6 +84,26 @@ public class Fraction {
 		return new Fraction(num, denom);
 	}
 
+	public Fraction negate() {
+		int num = this.getNumerator();
+		int denom = this.getDenominator();
+		if (num < 0){
+			if (denom <0){
+				denom = denom *-1;
+				return new Fraction(num, denom);
+			}
+			num = num * -1;
+			return new Fraction(num, denom);
+		}
+		if (denom < 0){
+			num = num * -1;
+			denom = denom * -1;
+			return new Fraction(num, denom);
+		}
+		num = num * -1;
+		return new Fraction(num, denom);
+	}
+
 //	public Fraction add(Fraction other) {
 //		int num = this.getNumerator()
 //		return new Fraction(num, denom);

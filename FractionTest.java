@@ -24,7 +24,7 @@ public class FractionTest {
 	//Test divide by zero - should print and error and exit
 	@Test
 	public void test() {
-		new Fraction (1,0);
+		new Fraction (1,1);
 		fail("Zero division not possible! Program was stopped.");
 	}
 	
@@ -49,5 +49,11 @@ public class FractionTest {
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 	
-	
+	@Test
+	public void testnegate(){
+		Fraction f = new Fraction(-3,-10);
+		Fraction expectedOutput = new Fraction(-3,10);
+		Fraction actualOutput = f.negate();
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

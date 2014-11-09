@@ -105,26 +105,37 @@ public class Fraction {
 		num = num * -1;
 		return new Fraction(num, denom);
 	}
-
+	
+// create inverse of a fraction so given a/b the inverse is b/a. 
+//this is used in division
 	public Fraction inverse() {
 		int num = this.getNumerator();
 		int denom = this.getDenominator();
 		return new Fraction(denom, num);
 	}
-
+	
+// write division as multiplication with the inverse of the second element
+// so a/b is a*1/b	
 	public Fraction divide(Fraction other) {
 		Fraction div = this.multiply(other.inverse());
 		return div;
 	}
 
+// add two fractions so:	
+// multiply both denominators to find new denominator
+// new numerator will be the sum of old numerators multiplied with the denominator of the other fraction, so:
+// a/b+c/d = [(a*d)+(c*b)]/(b*d) - this will be reduced down when the new function is created	
 	public Fraction add(Fraction other) {
 		int newNum = this.getNumerator()*other.getDenominator()+other.getNumerator()*this.getDenominator();
 		int newDenom = this.getDenominator()*other.getDenominator();
 		return new Fraction(newNum, newDenom);
 	}
-
-//	public Fraction add(Fraction other) {
-//		int num = this.getNumerator()
-//		return new Fraction(num, denom);
-//	}
+	
+// write subtraction as an addition with the negative second element
+// so a-b is in fact a+(-b)
+	public Fraction subtract(Fraction other) {
+		Fraction sub = this.add(other.negate());
+		return sub;
+	}
+	
 }

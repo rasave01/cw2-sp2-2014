@@ -91,4 +91,13 @@ public class FractionTest {
 		Fraction actualOutput = f.add(g);
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
+	
+	@Test
+	public void testSubtract(){
+		Fraction f = new Fraction(8,3);
+		Fraction g = new Fraction(2,6);
+		Fraction expectedOutput = new Fraction(7,3);
+		Fraction actualOutput = f.subtract(g);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

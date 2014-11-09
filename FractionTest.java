@@ -56,4 +56,12 @@ public class FractionTest {
 		Fraction actualOutput = f.negate();
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
+	
+	@Test
+	public void testtoString(){
+		Fraction f = new Fraction(3,1);
+		String expectedOutput = "3";
+		String actualOutput = f.toString();
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

@@ -22,11 +22,11 @@ public class FractionTest {
 //	}
 
 	//Test divide by zero - should print and error and exit
-	@Test
-	public void test() {
-		new Fraction (1,1);
-		fail("Zero division not possible! Program was stopped.");
-	}
+//	@Test
+//	public void test() {
+//		new Fraction (1,1);
+//		fail("Zero division not possible! Program was stopped.");
+//	}
 	
 	@Test
 	public void testMultiply(){

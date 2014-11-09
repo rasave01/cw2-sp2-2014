@@ -23,4 +23,23 @@ public class FractionCalculatorTest {
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 
+	@Test
+	public void testEvaluateNeg() {
+		Fraction f = new Fraction(2,-5);
+		String str = " N ";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(2,5);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testEvaluateClear() {
+		Fraction f = new Fraction(-2,15);
+		String str = "  C  ";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(0,15);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

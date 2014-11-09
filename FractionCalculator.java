@@ -10,9 +10,17 @@ public class FractionCalculator {
 		    //current char
 			char current = inputString.charAt(i);        
 		    	if (current=='A' || current =='a') op = "abs";
+		    	if (current=='N' || current =='n') op = "neg";
+		    	if (current=='C' || current =='c') op = "clear";
 		}
 		if (op.equals("abs")){
 			result = frac.absValue(); 
+	    }
+		if (op.equals("neg")){
+			result = frac.negate(); 
+	    }
+		if (op.equals("clear")){
+			result = new Fraction (0,1); 
 	    }
 		return result;
 	}

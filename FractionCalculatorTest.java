@@ -16,7 +16,7 @@ public class FractionCalculatorTest {
 	@Test
 	public void testEvaluateAbs() {
 		Fraction f = new Fraction(-2,15);
-		String str = "  A  ";
+		String str = "  a  ";
 		FractionCalculator frCalc = new FractionCalculator();
 		Fraction actualOutput = frCalc.evaluate(f,str);
 		Fraction expectedOutput = new Fraction(2,15);

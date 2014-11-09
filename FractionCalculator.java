@@ -9,7 +9,7 @@ public class FractionCalculator {
 		for (int i = 0; i < inputString.length(); i++){
 		    //current char
 			char current = inputString.charAt(i);        
-		    	if (current=='A') op = "abs";
+		    	if (current=='A' || current =='a') op = "abs";
 		}
 		if (op.equals("abs")){
 			result = frac.absValue(); 

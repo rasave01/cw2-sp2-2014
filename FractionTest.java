@@ -73,4 +73,13 @@ public class FractionTest {
 		Fraction actualOutput = f.inverse();
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
+	
+	@Test
+	public void testDevide(){
+		Fraction f = new Fraction(-8,3);
+		Fraction g = new Fraction(7,-5);
+		Fraction expectedOutput = new Fraction(40,21);
+		Fraction actualOutput = f.divide(g);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

@@ -112,6 +112,11 @@ public class Fraction {
 		return new Fraction(denom, num);
 	}
 
+	public Fraction divide(Fraction other) {
+		Fraction div = this.multiply(other.inverse());
+		return div;
+	}
+
 //	public Fraction add(Fraction other) {
 //		int num = this.getNumerator()
 //		return new Fraction(num, denom);

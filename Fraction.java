@@ -60,7 +60,6 @@ public class Fraction {
     }
 
     public Fraction multiply(Fraction other) {
-
         int num = this.getNumerator() * other.getNumerator();
         int denom = this.getDenominator() * other.getDenominator();
         return new Fraction(num, denom);
@@ -105,6 +104,12 @@ public class Fraction {
 		}
 		num = num * -1;
 		return new Fraction(num, denom);
+	}
+
+	public Fraction inverse() {
+		int num = this.getNumerator();
+		int denom = this.getDenominator();
+		return new Fraction(denom, num);
 	}
 
 //	public Fraction add(Fraction other) {

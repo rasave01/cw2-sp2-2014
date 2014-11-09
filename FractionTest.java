@@ -30,10 +30,11 @@ public class FractionTest {
 	
 	@Test
 	public void testMultiply(){
-		Fraction f = new Fraction(3,10);
-		Fraction g = new Fraction(1,2);
-		Fraction h = new Fraction(3,5);
-		if (!f.equals(g.multiply(h))) System.out.println("Multiply failed");
+		Fraction f = new Fraction(2,10);
+		Fraction g = new Fraction(4,2);
+		Fraction expectedOutput = new Fraction(4,10);
+		Fraction actualOutput = f.multiply(g);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 	
 //	@Test
@@ -62,6 +63,14 @@ public class FractionTest {
 		Fraction f = new Fraction(3,1);
 		String expectedOutput = "3";
 		String actualOutput = f.toString();
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testinverse(){
+		Fraction f = new Fraction(9,3);
+		Fraction expectedOutput = new Fraction(3,9);
+		Fraction actualOutput = f.inverse();
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 }

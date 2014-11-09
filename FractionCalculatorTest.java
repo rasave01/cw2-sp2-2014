@@ -14,8 +14,13 @@ import org.junit.Test;
 public class FractionCalculatorTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testEvaluateAbs() {
+		Fraction f = new Fraction(-2,15);
+		String str = "  A  ";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(2,15);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 
 }

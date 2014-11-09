@@ -44,7 +44,7 @@ public class FractionTest {
 	
 	@Test
 	public void testAbsValue(){
-		Fraction f = new Fraction(-3,-10);
+		Fraction f = new Fraction(3,-10);
 		Fraction expectedOutput = new Fraction(3,10);
 		Fraction actualOutput = f.absValue();
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
@@ -75,7 +75,7 @@ public class FractionTest {
 	}
 	
 	@Test
-	public void testDevide(){
+	public void testDivide(){
 		Fraction f = new Fraction(-8,3);
 		Fraction g = new Fraction(7,-5);
 		Fraction expectedOutput = new Fraction(40,21);

@@ -52,8 +52,8 @@ public class FractionTest {
 	
 	@Test
 	public void testNegate(){
-		Fraction f = new Fraction(-3,-10);
-		Fraction expectedOutput = new Fraction(-3,10);
+		Fraction f = new Fraction(3,-10);
+		Fraction expectedOutput = new Fraction(3,10);
 		Fraction actualOutput = f.negate();
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}

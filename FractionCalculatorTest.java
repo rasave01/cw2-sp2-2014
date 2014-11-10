@@ -52,4 +52,14 @@ public class FractionCalculatorTest {
 		Fraction expectedOutput = new Fraction(0,2);
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
+	
+	@Test
+	public void testEvaluateNewFraction() {
+		Fraction f = new Fraction(1,2);
+		String str = "2/16";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(1,8);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

@@ -23,22 +23,34 @@ public class FractionCalculator {
 			if(next.equals("n")||next.equals("N")||next.equals("neg")){operation = "neg";}
 			if(next.equals("c")||next.equals("C")||next.equals("clear")){operation = "clear";}
 			if(next.equals("q")||next.equals("Q")||next.equals("quit")){operation = "quit";}
-			if(next.equals("+")){operation = "add";}
+			if(next.equals('+')){operation = "add";}
 			if(next.equals("-")){operation = "sub";}
 			if(next.equals("*")){operation = "mply";}
 			if(next.equals('/')){operation = "div";}
 			if(next.contains("/") && next.length()>2){
 				//this is a fraction need to make one here
 				//use StringTokeniser with delimiter "/"
+				StringTokenizer fractionFound  = new StringTokenizer(next, "/");
+				
+				//get numerator
+				String numString = fractionFound.nextToken();
+				int num = Integer.parseInt(numString);
+				
+				//get denominator
+				String denomString = fractionFound.nextToken();
+				int denom = Integer.parseInt(denomString);
+				
+				Fraction newFraction = new Fraction(num,denom);
 				
 				//need to check for operation
 				if (operation !=""){
 					//perform add (unit test) operation with currentValue of the calculator
-					currentValue = currentValue.add(frac);
+					currentValue = currentValue.add(newFraction);
 					operation = "";
+					//result = currentValue;
 				}
-				//no operation is remembered so set currentValue to the one made above - not frac!
-				currentValue = frac;
+				//no operation is remembered so set currentValue to the one made above
+				currentValue = newFraction;
 			}
 			
 			// see if a number on its own was given
@@ -53,20 +65,20 @@ public class FractionCalculator {
 		}
 		
 		if(operation.equals("abs")){
-			result = frac.absValue(); 
+			currentValue = frac.absValue(); 
 	    }
 		if(operation.equals("neg")){
-			result = frac.negate(); 
+			currentValue = frac.negate(); 
 	    }
 		if(operation.equals("clear")){
-			result = new Fraction (0,1); 
+			currentValue = new Fraction (0,1); 
 	    }
 		if(operation.equals("quit")){
 			System.out.println("The program has stopped");
-			result = new Fraction (0,1);
+			currentValue = new Fraction (0,1);
 			//throw here;  
 	    }
-		return result;
+		return currentValue;
 	
 	}
 	

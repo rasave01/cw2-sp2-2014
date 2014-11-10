@@ -8,7 +8,6 @@ public class FractionCalculator {
 		//Initialise variables
 		Fraction currentValue = frac;
 		String operation = "";
-		//Fraction result = frac;
 		
 		// use StringTokaniser with the delimiter " "
 		StringTokenizer readStr = new StringTokenizer(inputString," "); 
@@ -54,16 +53,26 @@ public class FractionCalculator {
 				Fraction newFraction = new Fraction(num,denom);
 				
 				//need to check for operation
-				
+					
 				if (operation.equals("add")){
 					//perform add (unit test) operation with currentValue of the calculator
 					currentValue = currentValue.add(newFraction);
 					operation = "";
-				} else currentValue = newFraction;
+				} else if (operation.equals("sub")){
+					currentValue = currentValue.subtract(newFraction);
+					operation = "";
+					} else if (operation.equals("mply")){
+						currentValue = currentValue.multiply(newFraction);
+						operation = "";
+						} else if (operation.equals("div")){
+							currentValue = currentValue.divide(newFraction);
+							operation = "";
+							//no operation is remembered so set currentValue to the one made above		
+							} else currentValue = newFraction;
+						
 				
-				//no operation is remembered so set currentValue to the one made above
 				
-				
+							
 			}
 			
 			/* see if a number on its own was given

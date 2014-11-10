@@ -72,4 +72,44 @@ public class FractionCalculatorTest {
 		Fraction expectedOutput = new Fraction(5,6);
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
+	
+	@Test
+	public void testEvaluateSub() {
+		Fraction f = new Fraction(3,4);
+		String str = "- 1/4";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(2,4);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testEvaluateMply() {
+		Fraction f = new Fraction(3,4);
+		String str = "* 1/4";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(3,16);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testEvaluateDiv() {
+		Fraction f = new Fraction(3,4);
+		String str = "2/5 / 3/5";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(2,3);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testEvaluateAllOps() {
+		Fraction f = new Fraction(1,3);
+		String str = "1/5 + 1/3";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(8,15);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
 }

@@ -5,10 +5,9 @@ public class Fraction {
     private int denominator;
 
     public Fraction(int num, int denom) {
-        if (denom == 0) {
-            System.out.println("Invalid fraction with denominator 0"); 
-	    // this should use exceptions
-            return;
+        //test for denominator zero and throw exception
+    	if (denom == 0) {
+        	throw new ArithmeticException("Invalid fraction with denominator 0"); 
         }
         int gcd = myGcd(num, denom);
         setNumerator(num / gcd);

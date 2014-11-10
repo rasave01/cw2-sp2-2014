@@ -16,7 +16,7 @@ public class FractionCalculatorTest {
 	@Test
 	public void testEvaluateAbs() {
 		Fraction f = new Fraction(-2,15);
-		String str = " r 1/4 aa a  ";
+		String str = "a";
 		FractionCalculator frCalc = new FractionCalculator();
 		Fraction actualOutput = frCalc.evaluate(f,str);
 		Fraction expectedOutput = new Fraction(2,15);
@@ -60,6 +60,16 @@ public class FractionCalculatorTest {
 		FractionCalculator frCalc = new FractionCalculator();
 		Fraction actualOutput = frCalc.evaluate(f,str);
 		Fraction expectedOutput = new Fraction(1,8);
+		assertEquals("Wrong answer!", expectedOutput, actualOutput);
+	}
+	
+	@Test
+	public void testEvaluateAdd() {
+		Fraction f = new Fraction(1,2);
+		String str = "+ 1/3";
+		FractionCalculator frCalc = new FractionCalculator();
+		Fraction actualOutput = frCalc.evaluate(f,str);
+		Fraction expectedOutput = new Fraction(5,6);
 		assertEquals("Wrong answer!", expectedOutput, actualOutput);
 	}
 }
